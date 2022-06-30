@@ -1,6 +1,11 @@
+#Code by Rohan Kumar 
+#Date: 30.06.22
+
 from collections import defaultdict
 import heapq
 
+
+#Test Cases incase of no input.
 #s = 'qwertyuiopasdfghjklzxcv'
 #f = [4, 4, 17, 28, 38, 41, 41, 48, 55, 56, 57, 66, 69, 71, 71, 72, 74, 75, 75, 77, 92, 96, 98]
 
@@ -42,7 +47,7 @@ class Node:
     def __lt__(self,other):
         return self.freq < other.freq
 
-
+#Prints the codes of the characters
 def printnodes(node,val):
     newval = val + (node.huff)
 
@@ -52,6 +57,7 @@ def printnodes(node,val):
         printnodes(node.right,newval)
     
     if not node.left and not node.right:
+        #adding the codes to the huffman code dictionary before printing
         h_code[node.symbol] = newval
         print(node.symbol,': ',newval)
 
